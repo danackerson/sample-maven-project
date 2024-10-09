@@ -22,6 +22,7 @@ blocks:
         machine:
           type: e1-standard-2
           os_image: ubuntu2004
+    dependencies: []
   - name: Security Scan
     task:
       secrets:
@@ -34,3 +35,4 @@ blocks:
             - chmod +x ./snyk
             - sudo mv ./snyk /usr/local/bin/
             - SNYK_TOKEN=$SNYK_TOKEN snyk test
+    dependencies: []
