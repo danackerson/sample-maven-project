@@ -22,7 +22,8 @@ blocks:
         machine:
           type: e1-standard-2
           os_image: ubuntu2004
-    dependencies: []
+    dependencies:
+      - Security Scan
   - name: Security Scan
     task:
       secrets:
