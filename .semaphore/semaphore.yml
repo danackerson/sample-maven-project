@@ -1,0 +1,20 @@
+version: v1.0
+name: Java
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2204
+blocks:
+  - name: Maven
+    task:
+      jobs:
+        - name: Build
+          commands:
+            - mvn -B package --file pom.xml
+        - name: Test
+          commands:
+            - mvn test
+      prologue:
+        commands:
+          - checkout
+          - sem-version java 17
